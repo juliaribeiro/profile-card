@@ -1,38 +1,108 @@
-.App {
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(210, 210, 210, 1) 100%
+  );
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+p.top-border {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+svg {
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+a {
+  font-weight: bold;
+  transition: opacity 300ms ease;
+  display: inline-block;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+.badge {
+  width: 250px;
+  height: 250px;
+  background: #222;
+  color: #ffe23f;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 1px;
+  display: block;
+  margin: auto;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.badge h1 {
+  position: absolute;
+  margin-top: -28px;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  top: 50%;
+}
+
+.card {
+  display: block;
+  font-size: 22px;
+  width: 350px;
+  margin-left: 50px;
+  margin: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fade-enter {
+  opacity: 0.01;
+  transform: translateY(40px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.fade-leave {
+  opacity: 1;
+  transform: translateY(0px);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transform: translateY(-40px);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
 }
